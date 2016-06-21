@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Form Practice</title>
+    </head>
+    <body>
+
+        <form action='' method='GET'>
+
+            <fieldset>
+                <legend>Basic Info</legend>
+                <div>
+                    <label for='user-email'>Email</label>
+                    <input type='email' id='user-email' name='user' required>
+                </div>
+
+                <div>
+                    <label for='birthdate'>Birth Date</label>
+                    <input type='date' name='birthdate' id='birthdate' min='2016-06-20'>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for='bio'>Biography</label>
+                <textarea id='bio' name='bio'></textarea>
+            </div>
+
+            <fieldset>
+                <legend>Wrapping Up</legend>
+                <div>
+                    <input type='radio' name='contact-method' value='phone' id='contact-phone'>
+                    <label for='contact-phone'>Phone</label>
+                    <input type='radio' name='contact-method' value='email' id='contact-email'>
+                    <label for='contact-email'>Email</label>
+                </div>
+
+                <div>
+                    <button>I'm a button!</button>
+                    <input type='submit' value='Send the Data'>
+                    <input type='button' value='Another Button'>
+                </div>
+            </fieldset>
+
+        </form>
+
+    </body>
+</html>
