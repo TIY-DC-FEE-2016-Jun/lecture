@@ -1,0 +1,71 @@
+
+body {
+    margin: 0;
+}
+
+/* general styles for this lecture */
+.text p {
+    background-color: green;
+    border: 4px dashed red;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* first pass at positioning with only 2 p's */
+/*p {
+    display: inline-block;
+    width: 50%;
+}
+body p:first-child {
+    display: none;
+}*/
+
+/*img {
+    float: right;
+}*/
+
+/* second pass with responsive flow */
+.text p {
+    float: left;
+    min-width: 20em;
+    max-width: 33.3%;
+}
+
+footer {
+    clear: both;
+    padding-top: 1em;
+}
+
+/* positiong with "position" */
+
+nav {
+    position: relative;
+    height: 80px;
+}
+nav img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*.text p:nth-child(2) {
+    position: relative;
+}*/
+
+nav img.shadow {
+    z-index: 2;
+}
+nav img.color {
+    z-index: 1;
+}
+
+nav:hover img.color {
+    z-index: 3;
+}
+
+p img.shadow {
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+}
