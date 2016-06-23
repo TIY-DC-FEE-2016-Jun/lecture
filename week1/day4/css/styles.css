@@ -1,0 +1,143 @@
+
+/*
+CSS specificity point system
+
+100 points...
+id
+
+10 points...
+classname
+pseudo-classes
+attribute
+
+1 point...
+tagname
+pseudo-elements
+
+0 points...
+"universal selector" *
+combinators: space, >, ~
+
+ */
+
+/* reset styles */
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700,700italic);
+
+h1,h2,h3 { margin: 0.3em 0; }
+p { margin: 0.2em 0; }
+body {
+    font-family: 'Roboto Condensed', 'Arial', 'sans-serif';
+}
+
+/* ... */
+
+
+/* page generic styles */
+
+a:link {
+    color: #9d9;
+    text-decoration: none;
+}
+a:visited {
+    color: #393;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    background-color: red;
+}
+a:focus {
+    outline: none;
+    border-bottom: 1px dashed blue;
+}
+
+/* not enough specifiity! */
+/*nav a {
+    color: #333;
+}*/
+
+.site-nav a {
+    color: #333;
+}
+
+/* tabbed nav UI */
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid #8b8;
+}
+
+.site-nav li {
+    display: inline;
+    margin: 0 0.5em;
+    border: 1px solid #8b8;
+    border-bottom: none;
+    padding: 0.3em 0.3em 0 0.3em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #b9e2b9;
+    box-shadow: 2px 0 3px #999;
+}
+.site-nav li:hover {
+    background-color: #9bc19b;
+    box-shadow: none;
+}
+
+/* transitions and transforms */
+
+.playtime {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.playtime {
+    transform: rotate(45deg);
+    left: 0;
+    opacity: 1;
+    transition: all .5s, left 2s, opacity 1s;
+}
+
+.playtime:hover {
+    transform: rotate(45deg) scale(2,2);
+    position: relative;
+    left: 100px;
+    opacity: 0.1;
+}
+
+.bouncer {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    25% {
+        top: 50%;
+    }
+    50% {
+        top: 85%;
+    }
+    75% {
+        top: 50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.bouncer {
+    animation: bounce linear 3s;
+    animation-iteration-count: infinite;
+}
