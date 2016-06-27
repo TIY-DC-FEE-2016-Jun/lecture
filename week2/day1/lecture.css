@@ -1,0 +1,81 @@
+
+ul {
+    list-style-type: disc;
+}
+li {
+    background-color: red;
+}
+
+section {
+    width: 300px;
+}
+
+[aria-live] {
+    background-color: blue;
+}
+
+[id$='-tab'] {
+    background-color: pink;
+}
+
+[id^='home-'] {
+    background-color: green;
+}
+
+[role][id*='e'] {
+    background: black;
+}
+
+/* CSS UNITS:
+
+    Relative: em, %, rem, vw/vh
+    Absolute: px, pt
+
+*/
+
+section {
+    font-size: 1.5em;
+}
+section {
+    /*width: 20em;*/
+    width: 80vw;
+    font-variant: small-caps;
+    /*text-decoration: line-through;*/
+    line-height: 0.7em;
+    letter-spacing: 0.2em;
+    text-align: justify;
+
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+}
+
+::-webkit-input-placeholder {
+   color: green;
+}
+::-moz-placeholder {
+   color: green;
+}
+
+/* this MUST be above our larger breakpoint */
+@media screen and (min-width: 600px) {
+   section {
+      width: 45vw;
+      float: left;
+   }
+}
+
+@media screen and (min-width: 801px) {
+   section {
+      width: 30vw;
+      float: left;
+      color: #f00;
+   }
+}
+
+/* this is ok to be below because it is restrictive */
+@media screen and (min-width: 600px) and (max-width: 800px) {
+   section {
+      color: #050;
+   }
+}
