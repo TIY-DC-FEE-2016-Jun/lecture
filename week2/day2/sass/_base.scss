@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: $headerBaseSize;
+}
+h3 {
+    font-size: $headerBaseSize * 0.8;
+}
+
+main > header {
+    @include themedBorder;
+}
+
+footer {
+    clear: both;
+}

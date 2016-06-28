@@ -1,0 +1,22 @@
+.content {
+    width: $contentWidth;
+
+    .toc {
+        @include themedBorder(1px);
+        width: convertPxToEm($tocWidth, 11);
+    }
+
+    article {
+        width: ($contentWidth / $numArticleCols) - ($articleMargin * (2 * $numArticleCols));
+        float: left;
+        @include themedBorder(1px);
+        box-sizing: border-box;
+        margin: $articleMargin;
+    }
+
+    footer {
+        text-align: right;
+        @include rectangle(20em);
+        @include themedBorder;
+    }
+}

@@ -1,0 +1,45 @@
+/* Mixins */
+/* Functions */
+body {
+  margin: 0;
+  font-family: sans-serif; }
+
+h1 {
+  font-size: 1.2em; }
+
+h3 {
+  font-size: 0.96em; }
+
+main > header {
+  border: 2px solid #66c; }
+
+footer {
+  clear: both; }
+
+.content {
+  width: 80em; }
+  .content .toc {
+    border: 1px solid #66c;
+    width: 18.18182em; }
+  .content article {
+    width: 20.66667em;
+    float: left;
+    border: 1px solid #66c;
+    box-sizing: border-box;
+    margin: 1em; }
+  .content footer {
+    text-align: right;
+    width: 20em;
+    height: 10em;
+    border: 2px solid #66c; }
+
+.pages ul {
+  padding: 0;
+  list-style: none; }
+.pages li {
+  padding: 0.3em 1em;
+  display: inline-block; }
+  .pages li:hover {
+    background-color: red; }
+
+/*# sourceMappingURL=lecture.css.map */

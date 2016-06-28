@@ -1,0 +1,14 @@
+/* Mixins */
+
+@mixin themedBorder($size:2px) {
+    border: $size solid $themeLight;
+}
+@mixin rectangle($size) {
+    width: $size;
+    height: $size / 2;
+}
+
+/* Functions */
+@function convertPxToEm($pxSize, $fontSize:16) {
+    @return ( $pxSize / $fontSize ) + em;
+}
