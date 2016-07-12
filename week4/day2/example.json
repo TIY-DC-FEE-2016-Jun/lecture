@@ -1,0 +1,9 @@
+{
+    "name": "Jordan",
+    "age": 35,
+    "isStudent": false,
+    "pets": [
+        { "name": "Vincent", "species": "dog" },
+        { "name": "Pod", "species": "cat" }
+    ]
+}
