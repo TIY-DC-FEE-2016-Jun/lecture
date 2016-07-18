@@ -16,6 +16,12 @@
         var viewBase = view.split('/')[0];
         var $view = $( viewBase );
 
+        $('.nav > li')
+            .removeClass('active')
+            .find('[href="' + viewBase + '"]')
+                .parent()
+                    .addClass('active');
+
         if ( !$view.length ) {
             $view = $( '#help' );
         }

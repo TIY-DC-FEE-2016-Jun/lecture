@@ -14,7 +14,7 @@
     };
 
     function listHelpTopcs() {
-        $('#help article').append(
+        $('#help article').html(
             '<ul> \
             <li><a href=\'#help/topics/1\'>Topic 1</a></li> \
             <li><a href=\'#help/topics/2\'>Topic 2</a></li> \
@@ -27,7 +27,7 @@
      * @param  {Number} topic  The topic to load
      */
     function loadHelpTopic( topic ) {
-        $('#help article').append(
+        $('#help article').html(
             '<h2>Topic ' +  topic + '</h2>'
         );
 
