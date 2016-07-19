@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Math Tests</title>
+        <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css'>
+    </head>
+    <body>
+        <div id='mocha'></div>
+
+        <!-- libraries used - EITHER in testing our source -->
+        <script src='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js'></script>
+        <script src='http://chaijs.com/chai.js'></script>
+
+        <!-- sets up testing "style" (as TDD vs BDD) -->
+        <script>mocha.setup('tdd');</script>
+
+        <!-- our source code -->
+        <script src='../src/js/sum.js'></script>
+
+        <!-- our test code -->
+        <script src='specs/sum.js'></script>
+
+        <script>mocha.run();</script>
+    </body>
+</html>
