@@ -12,7 +12,9 @@
 
     ns.getRepoList = function getRepoList(username) {
         if (!username) {
-            // produce a "fake" promise
+            var def = $.Deferred();
+            def.reject({ status: 400, responseText: 'No username provided' });
+            return def.promise();
         }
 
         return $.ajax({

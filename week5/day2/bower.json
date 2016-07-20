@@ -1,0 +1,21 @@
+{
+  "name": "tiy-week5-day2",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jordan Kasper"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TIY-DC-FEE-2016-Jun/lecture",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
