@@ -1,0 +1,20 @@
+{
+  "name": "day4",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jordan Kasper <jordan@jordankasper.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/TIY-DC-FEE-2016-Jun/lecture",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
