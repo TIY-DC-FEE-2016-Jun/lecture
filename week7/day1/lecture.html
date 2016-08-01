@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='zoo'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Week 7 Day 1</title>
+
+        <style>
+            .mamallian td {
+                background-color: #cfc;
+            }
+            .is-old td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header ng-controller='WelcomeController as foobar'>
+            <h1>{{foobar.greeting}} {{foobar.counter}}</h1>
+            <time>{{foobar.now()}}</time>
+        </header>
+
+        <section>
+            <!-- foobar is only accessible in the element
+                 with the ng-controller directive -->
+            <h2>Greeting: {{foobar.greeting}}</h2>
+
+            <h2 ng-controller='WelcomeController as animals'>
+                {{animals.greeting}} {{animals.counter}}
+            </h2>
+
+            <p>one + one = {{ 1 + 1 }}</p>
+
+            <p class='{{ "foo" + "bar" }}'>
+                {{'hello' + 'world'}}
+            </p>
+        </section>
+
+        <section ng-controller='AnimalController as animals'>
+            <h2>Animals ({{animals.animals.length}})</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Species
+                        </th>
+                        <th>
+                            DoB
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr
+                        ng-class='{ mamallian: creature.mammal, "is-old": animals.isOld(creature.dob) }'
+                        ng-repeat='creature in animals.animals | orderBy:"species" | limitTo:animals.displayLimit'
+                        ng-hide='creature.name === "Roger"'>
+
+                        <td>
+                            {{creature.name}}
+                        </td>
+                        <td>
+                            {{creature.species}}
+                        </td>
+                        <td>
+                            {{creature.dob | date:'MM/yyyy'}}
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </section>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+        <script src='zoo.module.js'></script>
+        <script src='welcome.controller.js'></script>
+        <script src='animal.controller.js'></script>
+
+    </body>
+</html>
