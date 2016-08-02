@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='hotel'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Week 7 Day 2</title>
+
+        <style>
+            [ng-cloak], .ng-cloak {
+                display: none;
+            }
+            input.ng-touched.ng-invalid {
+                background-color: #fdd;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Our Hotel</h1>
+
+        <section ng-cloak ng-controller='RegistrationController as reg'>
+            <h2>Registered Guests</h2>
+
+            <form novalidate name='addGuest' ng-submit='addGuest.$valid && reg.addGuest(reg.newGuest)'>
+                <p ng-show='addGuest.guestName.$touched && !addGuest.guestName.$valid'>
+                    You didn't enter a name!
+                </p>
+                <input type='text' ng-model='reg.newGuest.name' name='guestName' placeholder='Name this guest!' required>
+                <input type='submit' value='Register'>
+                <p>
+                    Preview new guest: {{reg.newGuest.name}}
+                </p>
+            </form>
+
+            <ul>
+                <li ng-repeat='guest in reg.guests'>
+                    <h3>
+                        Name:
+                        <span class='guest-name' ng-bind='guest.name'></span>
+                    </h3>
+                    <aside ng-controller='SpaController as spa'>
+                        <p>Has this guest been to the spa? {{spa.hasVisited(guest)}}</p>
+                    </aside>
+                </li>
+            </ul>
+        </section>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+        <script src='hotel.module.js'></script>
+        <script src='registration.controller.js'></script>
+        <script src='spa.controller.js'></script>
+    </body>
+</html>
