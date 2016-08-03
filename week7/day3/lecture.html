@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='school'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Week 7 Day 3</title>
+    </head>
+    <body>
+
+        <h1>Week 7 - Day 3</h1>
+
+
+        <section ng-controller='RegistrarController as reg'>
+
+            <p>
+                Where you at? {{reg.path}}
+            </p>
+
+            <form name='addStudent' ng-submit='reg.addStudent( reg.newStudent )' novalidate>
+                <input type='text' name='name' placeholder='Student name' ng-model='reg.newStudent.name'>
+                <input type='number' min='0' name='grade' placeholder='Grade' ng-model='reg.newStudent.grade'>
+                <input type='submit'>
+            </form>
+
+            <ul>
+                <li ng-repeat='student in reg.students'>
+                    {{student.name}} - {{student.grade}} (created on {{student.dateAdded | date:"h:mm:ss"}})
+                </li>
+            </ul>
+
+        </section>
+
+
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+        <script src='school.module.js'></script>
+        <script src='student.service.js'></script>
+        <script src='registrar.controller.js'></script>
+    </body>
+</html>
