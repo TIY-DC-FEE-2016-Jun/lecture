@@ -1,0 +1,23 @@
+{
+  "name": "week7-day4",
+  "version": "1.0.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-karma": "^2.0.0",
+    "karma": "^1.1.2",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "mocha": "^3.0.1",
+    "phantomjs-prebuilt": "^2.1.10"
+  }
+}
