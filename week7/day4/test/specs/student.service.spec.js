@@ -49,6 +49,13 @@
             $rootScope.$digest();
         });
 
+        test('finding single student works with id', function() {
+            var student = studentService.find(13);
+
+            assert.isObject(student, 'got back an object from find');
+            // write more assertions!!
+        });
+
 
     });
 

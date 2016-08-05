@@ -22,7 +22,15 @@ module.exports = function(grunt) {
                         'src/js/school.module.js',
                         'src/js/**/*.js',
                         'test/specs/**/*.spec.js'
-                    ]
+                    ],
+
+                    preprocessors: {
+                        'src/js/**/*.js': ['coverage']
+                    },
+                    reporters: ['dots', 'coverage'],
+                    coverageReporter: {
+                        type: 'text-summary'
+                    }
                 }
             }
         }
