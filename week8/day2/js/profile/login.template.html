@@ -1,0 +1,7 @@
+<section>
+    <h2>Login with API Key</h2>
+    <form name='login' ng-submit='login.$valid && loginCtrl.authenticate()' novalidate>
+        <input type='text' ng-model='loginCtrl.data.key' name='apiKey' placeholder='GitHub API Key' required>
+        <input type='submit' class='btn btn-primary btn-sm'>
+    </form>
+</section>

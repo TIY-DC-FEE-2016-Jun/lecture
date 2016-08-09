@@ -1,0 +1,9 @@
+<section>
+    <h2>Repositories</h2>
+
+    <ul>
+        <li ng-repeat='repo in repos.list'>
+            <a ui-sref='repoDetail'>{{repo.full_name}}</a>
+        </li>
+    </ul>
+</section>
