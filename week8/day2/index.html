@@ -9,13 +9,13 @@
 
         <h1>GitHub</h1>
 
-        <nav>
+        <nav ng-controller='NavController as nav'>
             <ul class='nav nav-tabs'>
                 <li><a ui-sref='home'>Home</a></li>
-                <li><a ui-sref='login'>Login</a></li>
-                <li><a href='#'>Logout</a></li>
-                <li><a ui-sref='profile'>My Profile</a></li>
-                <li><a ui-sref='repos'>Repo List</a></li>
+                <li ng-hide='nav.loggedin()'><a ui-sref='login'>Login</a></li>
+                <li ng-show='nav.loggedin()' ng-click='nav.logout()'><a href='#'>Logout</a></li>
+                <li ng-show='nav.loggedin()'><a ui-sref='profile'>My Profile</a></li>
+                <li ng-show='nav.loggedin()'><a ui-sref='repos'>Repo List</a></li>
                 <li><a ui-sref='help'>Help</a></li>
             </ul>
         </nav>
@@ -28,9 +28,11 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js'></script>
         <script src='js/app/gh.module.js'></script>
         <script src='js/app/github.service.js'></script>
+        <script src='js/app/nav.controller.js'></script>
         <script src='js/profile/login.controller.js'></script>
         <script src='js/profile/profile.controller.js'></script>
         <script src='js/repos/repos.controller.js'></script>
+        <script src='js/repos/repoDetail.controller.js'></script>
 
     </body>
 </html>

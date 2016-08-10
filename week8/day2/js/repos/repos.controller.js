@@ -11,15 +11,17 @@
 
         this.list = [];
 
-        github.getRepos( github.getCurrentUser() )
-            .then(function(data) {
-                console.log(data);
-                that.list = data;
-            })
-            .catch(function() {
-                // show the user a message??
-            });
-
+        var user = github.getCurrentUser();
+        if (user) {
+            github.getRepos( user.login )
+                .then(function(data) {
+                    console.log(data);
+                    that.list = data;
+                })
+                .catch(function() {
+                    // show the user a message??
+                });
+        }
     }
 
 })();

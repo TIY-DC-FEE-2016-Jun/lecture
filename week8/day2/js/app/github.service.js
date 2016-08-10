@@ -4,20 +4,44 @@
     angular.module('gh')
         .factory('github', GitHubService);
 
-    GitHubService.$inject = ['$http'];
+    GitHubService.$inject = ['$http', '$q'];
 
-    function GitHubService($http) {
+    function GitHubService($http, $q) {
         var apiKey;
         var currentUser;
+
+        init();
 
         return {
             getProfile: getProfile,
             getRepos: getRepos,
-            getCurrentUser: getCurrentUser
+            getCurrentUser: getCurrentUser,
+            logout: logout,
+            isLoggedIn: isLoggedIn
         };
+
+        function init() {
+            apiKey = localStorage.getItem('api-key');
+            if (apiKey) {
+                getProfile(apiKey)
+                    .catch(function() {
+                        apiKey = null;
+                        localStorage.removeItem('api-key');
+                    });
+            }
+        }
 
         function getCurrentUser() {
             return currentUser;
+        }
+
+        function isLoggedIn() {
+            return !!apiKey;
+        }
+
+        function logout() {
+            apiKey = null;
+            currentUser = null;
         }
 
         /**
@@ -27,7 +51,17 @@
          */
         function getProfile(key) {
             if (!key) {
-                // return a promise that is rejected
+                if (apiKey) {
+                    key = apiKey;
+                } else {
+                    var err = new Error('You need an API key to get profile data');
+                    err.status = 401;
+                    return $q.reject(err);
+                }
+            }
+
+            if (currentUser) {
+                return $q.resolve(currentUser);
             }
 
             return $http({
@@ -39,7 +73,10 @@
             })
             .then(function(response) {
                 apiKey = key;
-                currentUser = response.data.login;
+                currentUser = response.data;
+
+                localStorage.setItem('api-key', apiKey);
+
                 return response.data;
             });
 

@@ -4,10 +4,12 @@
     angular.module('gh')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$state', 'github'];
+    LoginController.$inject = ['$stateParams', '$state', 'github'];
 
-    function LoginController($state, github) {
+    function LoginController($stateParams, $state, github) {
         var that = this;
+
+        this.message = $stateParams.message;
 
         this.data = {};
         this.authenticate = function authenticate() {
