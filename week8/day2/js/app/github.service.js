@@ -89,7 +89,7 @@
          */
         function getRepos(username) {
             if (!username) {
-                // what do I do here???
+                return $q.reject(new Error('Please provide username to get repos'));
             }
 
             return $http({
