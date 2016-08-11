@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='hotel'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Week 8 Day 4</title>
+        <style>
+            .guest-vcard {
+                border: 1px solid #669;
+                width: 12em;
+                float: left;
+                margin: 1em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Samina's Hotel</h1>
+
+        <section ng-controller='RegistrationController as reg'>
+            <h2>Guest List</h2>
+
+            <article class='guest-vcard' ng-repeat='guest in reg.guests' v-card person='guest' foobar='reg.checkout(id)'></article>
+
+            <v-card class='guest-vcard' ng-repeat='guest in reg.guests' person='guest'></v-card>
+        </section>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+        <script src='js/hotel.module.js'></script>
+        <script src='js/registration.controller.js'></script>
+        <script src='js/vcard.directive.js'></script>
+
+    </body>
+</html>
