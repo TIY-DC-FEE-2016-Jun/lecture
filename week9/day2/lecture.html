@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='lecture'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Week 9 Day 2</title>
+        <style>
+            time {
+                color: #fff;
+                font-style: bold;
+                padding: 5em;
+            }
+            ul {
+                margin-top: 5em;
+            }
+
+            .modal-dialog {
+                border: 1px solid red;
+                width: 20em;
+                position: absolute;
+                left: 30%;
+                top: 20%;
+                z-index: 99;
+            }
+        </style>
+    </head>
+    <body ng-controller='ItemController as itemCtrl'>
+
+        <h1>{{itemCtrl.title | reverse:true}}</h1>
+
+        <div the-wall material='"stone"'></div>
+
+        <my-time class='clock-container' format='"HH:mm:ss"'></my-time>
+
+        <ul>
+            <li>
+                Item 1
+                <button ng-click='itemCtrl.confirmDeletion(1)'>X</button>
+
+                <modal ng-show='itemCtrl.itemToBeDeleted === 1' modal-title='"Delete Confirmation"'>
+                    <p>
+                        Are you sure you want to delete Item 1?
+                    </p>
+                    <button ng-click='itemCtrl.deleteItem(1)'>delete</button>
+                </modal>
+            </li>
+            <li>
+                Item 2
+                <button ng-click='itemCtrl.confirmDeletion(2)'>X</button>
+
+                <modal ng-show='itemCtrl.itemToBeDeleted === 2' modal-title='"Delete Confirmation"'>
+                    <p>
+                        Are you sure you want to delete Item 2?
+                    </p>
+                    <button ng-click='itemCtrl.deleteItem(2)'>delete</button>
+                </modal>
+            </li>
+        </ul>
+
+        <button>Add</button>
+
+        <modal ng-show='false' modal-title='"Add Item"'>
+            <p>
+                What item do you want to add?
+            </p>
+            <input type='text' placeholder='Item name'>
+            <button ng-click='itemCtrl.addItem("foobar")'>add item</button>
+        </modal>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+        <script src='lecture.module.js'></script>
+        <script src='wall.directive.js'></script>
+        <script src='my-time.directive.js'></script>
+        <script src='modal.directive.js'></script>
+        <script src='item.controller.js'></script>
+        <script src='reverse.filter.js'></script>
+
+    </body>
+</html>
